@@ -58,3 +58,53 @@ $font-path-roboto: '../fonts/Roboto';
 @include mk-roboto-font-face('BoldItalic', 700, italic);
 @include mk-roboto-font-face('Black', 900, normal);
 @include mk-roboto-font-face('BlackItalic', 900, italic);
+
+/* ====== Tambahan: Self-hosted Metropolis (tanpa menghapus font lama) ====== */
+$font-path-metropolis: '../fonts/Metropolis';
+
+@mixin mk-metropolis-font-face($name, $weight, $style) {
+    @font-face {
+        font-family: 'Metropolis';
+        src: url('#{$font-path-metropolis}/Metropolis-#{$name}.woff2') format('woff2');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+    }
+}
+
+/* Daftarkan varian sesuai file yang tersedia */
+@include mk-metropolis-font-face('Regular', 400, normal);
+@include mk-metropolis-font-face('RegularItalic', 400, italic);         /* opsional */
+@include mk-metropolis-font-face('Medium', 500, normal);         /* opsional */
+@include mk-metropolis-font-face('MediumItalic', 500, italic);   /* opsional */
+@include mk-metropolis-font-face('Bold', 700, normal);
+@include mk-metropolis-font-face('BoldItalic', 700, italic);     /* opsional */
+
+/* Terapkan Metropolis, tapi jangan timpa ikon Font Awesome */
+.o_web_client,
+.o_web_client *:not(.o_code_view):not(.o_field_code):not(.o_ace_view)
+               :not(.fa):not(.fas):not(.far):not(.fal):not(.fab) {
+    font-family: 'Metropolis', 'Roboto', 'Noto Sans', system-ui, -apple-system, 'Segoe UI',
+                 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* Pertahankan monospace untuk area kode/editor */
+.o_code_view,
+.o_field_code,
+.o_ace_view,
+.o_ace_view .ace_editor,
+.o_ace_view .ace_text-layer {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                 'Liberation Mono', 'Courier New', monospace !important;
+}
+
+/* (Opsional) Heading ikut Metropolis */
+.o_web_client h1,
+.o_web_client h2,
+.o_web_client h3,
+.o_web_client h4,
+.o_web_client h5,
+.o_web_client h6 {
+    font-family: 'Metropolis', inherit !important;
+}
+
