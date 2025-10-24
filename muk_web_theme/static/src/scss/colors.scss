@@ -20,15 +20,15 @@
 *
 **********************************************************************************/
 
-$o-brand-odoo: #243742;
-$o-brand-primary: #5D8DA8;
+$o-brand-odoo: #333333;
+$o-brand-primary: #1A1A1A;
 
-$mk-required-color: #d1dfe6;
+$mk-required-color: #B2B2B2;
 
-$mk-apps-color: #f8f9fa;
+$mk-apps-color: #F8F9FA;
 
-$mk-appbar-color: #dee2e6;
-$mk-appbar-background: #000000;
+$mk-appbar-color: #DEE2E6;
+$mk-appbar-background: #F8F9FA;
 
 $mk-brand-gradient-start: lighten($o-brand-odoo, 10%);
 $mk-brand-gradient-end: lighten($o-brand-odoo, 20%);

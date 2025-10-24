@@ -114,12 +114,12 @@ class ResConfigSettings(models.TransientModel):
         colors_changed.append(self.theme_color_appbar_background != colors['mk-appbar-background'])
         if(any(colors_changed)):
             variables = [
-                {'name': 'o-brand-odoo', 'value': self.theme_color_brand or "#243742"},
-                {'name': 'o-brand-primary', 'value': self.theme_color_primary or "#5D8DA8"},
-                {'name': 'mk-required-color', 'value': self.theme_color_required or "#d1dfe6"},
-                {'name': 'mk-apps-color', 'value': self.theme_color_menu or "#f8f9fa"},
-                {'name': 'mk-appbar-color', 'value': self.theme_color_appbar_color or "#dee2e6"},
-                {'name': 'mk-appbar-background', 'value': self.theme_color_appbar_background or "#000000"},
+                {'name': 'o-brand-odoo', 'value': self.theme_color_brand or "#333333"},
+                {'name': 'o-brand-primary', 'value': self.theme_color_primary or "#1A1A1A"},
+                {'name': 'mk-required-color', 'value': self.theme_color_required or "#B2B2B2"},
+                {'name': 'mk-apps-color', 'value': self.theme_color_menu or "#F8F9FA"},
+                {'name': 'mk-appbar-color', 'value': self.theme_color_appbar_color or "#DEE2E6"},
+                {'name': 'mk-appbar-background', 'value': self.theme_color_appbar_background or "#F8F9FA"},
             ]
             self.env['muk_web_theme.scss_editor'].replace_values(
                 SCSS_URL, XML_ID, variables
