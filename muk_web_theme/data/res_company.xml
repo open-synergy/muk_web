@@ -22,11 +22,16 @@
 
   -->
 
-<odoo noupdate="1">
+<odoo>
 
 	<record id="base.main_company" model="res.company">
 		<field name="background_image" type="base64" file="muk_web_theme/static/src/img/background.png" />
-    </record>
+    <field name="favicon" type="base64" file="muk_web_theme/static/src/img/favicon.png" />
+  </record>
+
+  	<record id="base.main_partner" model="res.partner">
+    <field name="image_1920" type="base64" file="muk_web_theme/static/src/img/logo.png" />
+  </record>
 	
 </odoo>
 
