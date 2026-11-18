@@ -86,9 +86,12 @@ const MenuSearchMixin = {
             return;
         }
         const all = this.$search_results.find(".mk_menu_search_result");
-        const key = event.key || String.fromCharCode(event.which);
-        const pre_focused = all.filter(".active") || $(all[0]);
-        const offset = all.index(pre_focused);
+        let key = event.key || String.fromCharCode(event.which);
+        let pre_focused = all.filter(".active").first();
+        if (!pre_focused.length) {
+            pre_focused = all.first();
+        }
+        let offset = all.index(pre_focused);
         if (key === "Tab") {
             event.preventDefault();
             key = event.shiftKey ? "ArrowUp" : "ArrowDown";
@@ -96,7 +99,7 @@ const MenuSearchMixin = {
         switch (key) {
 	        case "Enter":
 	            pre_focused.click();
-	            break;
+	            return;
 	        case "ArrowUp":
 	            offset--;
 	            break;
